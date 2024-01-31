@@ -33,7 +33,7 @@ const (
 	panic6 = "Калькулятор работает только с арабскими цифрами от I до X или римскими цифрами от 1 до 10"
 )
 
-func base(s string) {
+func calc(s string) {
 	var operator string
 	var stringsFound int
 	numbers := make([]int, 0)
@@ -117,8 +117,8 @@ func main() {
 	fmt.Println("Введите значение:")
 	reader := bufio.NewReader(os.Stdin)
 	for {
-		text, _ := reader.ReadString('\n')
-		text = strings.TrimSpace(text)
-		base(strings.ToUpper(strings.TrimSpace(text)))
+		cons, _ := reader.ReadString('\n')
+		c := strings.TrimSpace(cons)
+		calc(strings.ToUpper(strings.TrimSpace(c)))
 	}
 }
